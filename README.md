@@ -1,5 +1,5 @@
 # goSync
-A go-style channel and waitGroup for nodejs.
+Go-style channel and waitGroup for nodejs.
 
 # Why
 To control concurrent tasks more intuitively and easily .
