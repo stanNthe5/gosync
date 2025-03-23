@@ -1,6 +1,6 @@
 {
-  "name": "sync-js",
-  "version": "0.1.0",
+  "name": "gosync",
+  "version": "0.1.1",
   "description": "Go-style channel and waitGroup for js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stanNthe5/sync-js.git"
+    "url": "git+https://github.com/stanNthe5/gosync.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stanNthe5/sync-js/issues"
+    "url": "https://github.com/stanNthe5/gosync/issues"
   },
-  "homepage": "https://github.com/stanNthe5/sync-js#readme",
+  "homepage": "https://github.com/stanNthe5/gosync#readme",
   "devDependencies": {
     "@types/node": "^22.13.11",
     "typescript": "^4.0.0"
