@@ -1,0 +1,26 @@
+{
+  "name": "sync-js",
+  "version": "0.1.0",
+  "description": "Go-style channel and waitGroup for js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "node --test test/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanNthe5/sync-js.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stanNthe5/sync-js/issues"
+  },
+  "homepage": "https://github.com/stanNthe5/sync-js#readme",
+  "devDependencies": {
+    "@types/node": "^22.13.11",
+    "typescript": "^4.0.0"
+  }
+}
