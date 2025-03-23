@@ -1,6 +1,6 @@
 {
   "name": "gosync",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Go-style channel and waitGroup for js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
