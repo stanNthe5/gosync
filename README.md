@@ -2,7 +2,7 @@
 Go-style channel and waitGroup for nodejs.
 
 # Why
-To control concurrent tasks more intuitively and easily .
+I made this so that I can control task queue more easily.
 
 # Install
 ```console
