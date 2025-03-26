@@ -14,7 +14,26 @@ test('channel FIFO add/take', async () => {
     assert.strictEqual(await ch.take(), 3);
 });
 
-test('waitGroup resolves after all tasks complete', async () => {
+await test('channel, no buffer, take first', async () => {
+    let ch = new channel<number>();
+    (async () => {
+        for (let i = 1; i <= 5; i++) {
+            let num = await ch.take()
+            console.log('taken', num)
+        }
+    })();
+
+    (async () => {
+        for (let i = 1; i <= 5; i++) {
+            await new Promise(resolve => setTimeout(resolve, 1000))
+            console.log('adding ', i)
+            await ch.add(i)
+        }
+    })();
+    await new Promise(resolve => setTimeout(resolve, 6000))
+})
+
+await test('waitGroup resolves after all tasks complete', async () => {
     const wg = new waitGroup();
     wg.add(3);
 

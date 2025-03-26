@@ -2,7 +2,7 @@
 Go-style channel and waitGroup for nodejs.
 
 # Why
-I made this so that I can control task queue more easily.
+I made this so that I can control task queue more easily. I guess there will be other use cases.
 
 # Install
 ```console
@@ -11,6 +11,28 @@ npm i gosync
 
 # Usage
 
+## channel
+```js
+import { channel } from 'gosync';
+let ch = new channel<number>();
+(async () => {
+    for (let i = 1; i <= 5; i++) {
+        let num = await ch.take()
+        console.log('taken', num)
+    }
+})();
+
+(async () => {
+    for (let i = 1; i <= 5; i++) {
+        await new Promise(resolve => setTimeout(resolve, 1000))
+        console.log('adding ', i)
+        await ch.add(i)
+    }
+})();
+
+```
+
+## channel and waitGroup
 ```js
 
 import { channel, waitGroup } from 'gosync';

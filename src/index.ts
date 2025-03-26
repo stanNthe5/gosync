@@ -8,7 +8,7 @@ export class channel<T> {
     private takeQueue: ((v: any) => void)[] = [];
 
     // Constructor accepts the maximum size of the channel
-    constructor(private max: number) { }
+    constructor(private buffer: number = 0) { }
 
     // Adds an item to the channel
     async add(item: T) {
@@ -16,12 +16,12 @@ export class channel<T> {
         if (this.takeQueue.length) {
             let resolve = this.takeQueue.shift(); // Get the first waiting consumer
             if (resolve) {
-                resolve(item); // Fulfill the consumer's promise with the item
+                return resolve(item); // Fulfill the consumer's promise with the item
             }
         }
 
         // If the channel is not full, add the item to the channel directly
-        if (this.items.length < this.max) {
+        if (this.items.length < this.buffer) {
             this.items.push(item);
             return;
         } else {
